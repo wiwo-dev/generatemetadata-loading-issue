@@ -14,9 +14,9 @@ To replicate this issue, follow these steps:
 
 3. The top list contains links to `/user/[userId]`, and these links have a `generateMetadata` function that fetches data. Upon clicking these links, for the initial 3 seconds, there is no visible loading indication, making users believe that something might be wrong with the link.
 
-4. In contrast, if you click on any of the links in the bottom list, which leads to `/user-no-metadata/[userId]`, you'll notice that a Loading state is triggered by Suspense, providing a clear loading indication.
+4. In contrast, if you click on any of the links in the bottom list, which leads to `/user-no-metadata/[userId]` that doesnt use `generateMetadata`, you'll notice that a Loading state is triggered by Suspense, providing a clear loading indication.
 
-I encountered this issue while working on a project with a substantial number of subpages, and it's highly likely that a given subpage will be opened for the first time and only once, with new entries continually being added.
+I encountered this issue while working on a project with a tens of thousands number of subpages, and it's highly likely that a given subpage will be opened for the first time and only once, with new entries continually being added.
 
 ### Question
 
